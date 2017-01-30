@@ -1,3 +1,8 @@
+html {
+    width: 1336px;
+    margin: auto;
+}
+
 body {
     padding-left: 15px;
 }

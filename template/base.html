@@ -1,25 +1,19 @@
-{% load staticfiles %}
-<!-- Loads CSS or JS files in static directory -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> {% load staticfiles %}
+    <!-- Loads CSS or JS files in static directory -->
     <title>{% block head_title %} Record Directory {% endblock head_title %}</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <link rel="stylesheet" href="../recordstore/static/css/base.css" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
 </head>
 
 <body>
     {% block content %}
     <h1> Welcome!
         <h1>
-            <p> This is the record directory main page. </p>
+            <p> This is the <em>Record Directory's</em> main page. </p>
+            <p> Why can't I get this css file to load??</p>
             {% endblock %}
 </body>
 
