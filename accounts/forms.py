@@ -1,5 +1,5 @@
 from django import forms
-from . import models
+# from django.forms import ModelForm
 
 class UserLoginForm(forms.Form):
     """ Login in form """

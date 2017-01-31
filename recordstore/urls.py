@@ -17,9 +17,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from accounts import views
 
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/', include('accounts.urls')),
-    url(r'^home/', views.base_view, name='home')
+    url(r'^home/', views.base_view, name='home'),
+    url(r'^$', views.base_view, name="main")
 ]
