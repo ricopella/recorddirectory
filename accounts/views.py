@@ -1,11 +1,12 @@
 from django.contrib import messages
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from .forms import UserLoginForm
 from .models import Accounts
+from . import views
 
 
-def login_view(request):
-    """ admin task for authenticating login credentials """
+def signup_view(request):
+    """ task for creating new credentials """
     form = UserLoginForm()
     if request.method == "POST":
         form = UserLoginForm(request.POST)
@@ -20,19 +21,18 @@ def login_view(request):
             form = UserLoginForm()
     return render(request, "forms.html", {"form": form})
 
+def login_view(request):
+    """ admin task for authenticating login credentials """
+    form = UserLoginForm()
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect("base.html")
+    else:
+        return ("Username & Password do not match")
+    return render(request, "forms.html", {"form":form})
+
 def base_view(request):
-    """ testing home page """
+    """ Home Page View """
     return render(request, "base.html",)
 
-
-############# Original ###################
-# def login_view(request):
-#     """ admin task for authenticating login credentials """
-#      form = UserLoginForm()
-#      if request.method == 'POST':
-#         form = UserLoginForm(request.POST)
-#         if form.is_valid():
-#             return HttpResponseRedirect("base.html")
-#     else:
-#         form = UserLoginForm()
-#     return render(request, "forms.html", {"form":form})
