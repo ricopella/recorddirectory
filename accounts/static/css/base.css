@@ -1,19 +1,32 @@
 html {
-    width: 1336px;
     margin: auto;
 }
 
 body {
     padding-left: 15px;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
 }
 
-h1 {
+#navigation {
+    padding: 0;
+}
+
+.navbar {
+    margin: 0;
+}
+
+#heading {
+    background: transparent;
+    min-height: 100%;
+    position: relative;
+    background: url('../img/vinyl.jpg');
+    /*center center fixed no-repeat;*/
+    background-size: cover;
+}
+
+h1,
+h3 {
     color: red;
+    text-align: center;
 }
-
-p {
-    color: blue;
-}
-
-
-/*/Users/narin/Desktop/code/learncode/recordstore/recordstore/static/css/base.css*/

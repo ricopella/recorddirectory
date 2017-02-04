@@ -6,15 +6,35 @@
     <!-- Loads CSS or JS files in static directory -->
     <title>{% block head_title %} Record Directory {% endblock head_title %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile friendly -->
 </head>
 
-<body>
+<!-- navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#heading">Home</a></li>
+                <li><a href="#login">Login/Sign-Up</a></li>
+                <li><a href="#store">Store</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- end #navigation-->
+
+<header>
     {% block content %}
-    <h1> Welcome!
-        <h1>
-            <p> This is the <em>Record Directory's</em> main page. </p>
-            <p> Why can't I get this css file to load??</p>
-            {% endblock %}
-</body>
+    <div class="jumbotron text-center" id="heading">
+        <div class="containter intro-text">
+            <h3> Welcome to the</h3>
+            <h1>Record Directory</h1>
+        </div>
+    </div>
+</header>
+{% endblock content %}
 
 </html>

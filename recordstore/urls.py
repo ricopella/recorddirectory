@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/', include('accounts.urls')),
     url(r'^home/', views.base_view, name='home'),
+    url(r'^invalid/', views.invalid_view, name='invalid'),
     url(r'^$', views.base_view, name="main")
 ]
