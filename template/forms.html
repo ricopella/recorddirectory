@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}Accounts{% endblock %} {% block header %}Accounts{% endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}Accounts{% endblock %} {% block header %}Accounts{% endblock %} {% block content %} {% load bootstrap3 %}
 
 <div class='col-sm-6 col-sm-offset-3'>
     <form method="POST" action="/login/" enctype="multipart/form-data">{% csrf_token %} {{ form }}

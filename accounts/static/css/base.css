@@ -20,13 +20,18 @@ body {
     background: transparent;
     min-height: 100%;
     position: relative;
-    background: url('../img/vinyl.jpg');
-    /*center center fixed no-repeat;*/
-    background-size: cover;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    background: url('../img/vinyl.jpg') center center fixed no-repeat;
+    background-size: inherit;
 }
 
-h1,
-h3 {
-    color: red;
-    text-align: center;
+.intro-text {
+    color: #fff;
+    padding: 100px 0;
 }

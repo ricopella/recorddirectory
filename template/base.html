@@ -2,32 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> {% load staticfiles %}
+    <meta charset="UTF-8"> {% load staticfiles %} {% load bootstrap3 %}
     <!-- Loads CSS or JS files in static directory -->
     <title>{% block head_title %} Record Directory {% endblock head_title %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- mobile friendly -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.css' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
+
 <!-- navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+<nav class="navbar navbar-right">
+    <div class="container-fluid">
         <div id="navigation">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#heading">Home</a></li>
+            <ul class="nav navbar-nav">
+                <li><a href="/home">Home</a></li>
                 <li><a href="/login">Login/Sign-Up</a></li>
-                <li><a href="#store">Store</a></li>
+                <li><a href="/dashboard">Store</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<!-- end #navigation-->
+<!-- end navbar-->
+
+{% block content %} {% endblock content %}
 
 <header>
-    {% block content %}
     <div class="jumbotron text-center" id="heading">
         <div class="containter intro-text">
             <h3> Welcome to the</h3>
@@ -35,6 +36,6 @@
         </div>
     </div>
 </header>
-{% endblock content %}
+
 
 </html>
