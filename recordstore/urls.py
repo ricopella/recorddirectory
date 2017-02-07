@@ -19,8 +19,5 @@ from accounts import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^login/', include('accounts.urls')),
-    url(r'^home/', views.base_view, name='home'),
-    url(r'^invalid/', views.invalid_view, name='invalid'),
-    url(r'^$', views.base_view, name="main")
+    url(r'^', include('accounts.urls')) # <- this entry handles all the urls for the accounds app
 ]

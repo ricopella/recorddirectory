@@ -1,2 +1,6 @@
 venv/
 *.pyc
+# added sqlite file to ignore so db isn't in your repo
+# if you're having trouble writing to the db
+# you might need to run 'python manage.py migrate' to run db migrations
+*.sqlite3
