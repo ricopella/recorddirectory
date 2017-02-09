@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
-from .forms import UserLoginForm
+from .forms import UserLoginForm, UserSignupForm
 from .models import Accounts
 from . import views
 
@@ -54,7 +54,20 @@ def login_view(request):
 
 def signup_view(request):
     """ Sign-Up View"""
-    return render(request, "signup.html")
+    form = UserSignupForm()
+    if request.method == "POST":
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            user = Accounts()
+            user.username = form.cleaned_data["username"]
+            user.password = form.cleaned_data["password"]
+            user.save()
+            messages.success(request, 'Username & Password Created!')
+            print(form.cleaned_data)
+        else:
+            form = UserLoginForm()
+    return render(request, 'signup.html', {'form': form}) # Need to setup redirect to home page also
+
 
 def base_view(request):
     """ Home Page View """

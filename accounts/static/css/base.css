@@ -59,7 +59,10 @@ li {
     position: fixed;
     align-items: center;
     justify-content: center;
+    border: 1px solid green
 }
+
+#signup_form {}
 
 #index {
     color: #fff;
