@@ -19,5 +19,5 @@ from accounts import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('accounts.urls')) # <- this entry handles all the urls for the accounds app
+    url(r'^', include('accounts.urls')) # <- this entry handles all the urls for the accounts app
 ]

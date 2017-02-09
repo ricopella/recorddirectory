@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from django.core.exceptions import ObjectDoesNotExist # <- need to import the error since it's a custom Djano error
+from django.core.exceptions import ObjectDoesNotExist
 from .forms import UserLoginForm
 from .models import Accounts
 from . import views
@@ -16,7 +16,7 @@ def signup_view(request):
 
         # need to validate the form before doing anyting else
         if form.is_valid():
-            # grap the username from the form to test if 
+            # grab the username from the form to test if 
             # user already exists
             username = form.cleaned_data['username']
 
@@ -30,9 +30,9 @@ def signup_view(request):
                 user = Accounts.objects.get(username=username)
             except ObjectDoesNotExist: # <- here is where we catch or 'except' the error so the app doesn't crash
                 is_user = False        # found the specific error here http://stackoverflow.com/questions/11109468/how-do-i-import-the-django-doesnotexist-exception
-            if 'signup' in request.POST and is_user == False: # <- need to check if they clicked signup and
-                user = Accounts()                             # that they don't exist to prevent duplicate entries
-                user.username = form.cleaned_data["username"] # this model logic should work now
+            if 'signup' in request.POST and is_user == False:
+                user = Accounts()
+                user.username = form.cleaned_data["username"]
                 user.password = form.cleaned_data["password"]
                 user.save()
                 messages.success(request, 'Username & Password Created!')
@@ -40,14 +40,16 @@ def signup_view(request):
             elif 'login' in request.POST:
                 if is_user == True:
                     if user.password == form.cleaned_data['password']:
-                        return render(request, 'base.html', {}) # <- same thing as about about index.html
+                        print ('success!') # test
+                        return render(request, 'index.html', {}) # <- same thing as about index.html
                     else:
                         messages.success(request, "invalid username & password")
                 elif is_user == False:
                     return render(request, 'invalid.html', {})
             else:
-                # Need to setup redirect to home page also
-                form = UserLoginForm()       
+
+                form = UserLoginForm()
+                return render(request, 'index.html', {}) # Need to setup redirect to home page also
     return render(request, "forms.html", {"form": form})
 
 def base_view(request):
@@ -57,3 +59,7 @@ def base_view(request):
 def invalid_view(request):
     """ Invalid Login View """
     return render(request, "invalid.html",)
+
+def index_view(request):
+    """ Invalid Login View """
+    return render(request, "index.html",)
