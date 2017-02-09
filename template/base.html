@@ -14,29 +14,30 @@
 <!-- navbar -->
 <nav class="navbar navbar-right">
     <div class="container-fluid">
-        <div id="navigation">
-            <ul class="nav navbar-nav">
-                <li><a href="/home">Home</a></li>
-                <li><a href="/login">Login/Sign-Up</a></li>
-                <li><a href="/dashboard">Store</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+        <ul class="nav navbar-nav" id="navigation">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/login">Login/Sign-Up</a></li>
+            <li><a href="/dashboard">Store</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
 </nav>
 <!-- end navbar-->
 
-{% block content %} {% endblock content %}
-
 <header>
     <div class="jumbotron text-center" id="heading">
-        <div class="containter intro-text">
-            <h3> Welcome to the</h3>
-            <br />
-            <h1>Record Directory</h1>
-        </div>
     </div>
 </header>
 
+{% block content %}
+
+<div class="containter intro-text">
+    <h3> Welcome to the</h3>
+    <h1>Record Directory</h1>
+    <br />
+    <p> Please <a href="/login">Login</a> or <a href="/login">Sign-Up</a> for an account </p>
+</div>
+
+{% endblock content %}
 
 </html>

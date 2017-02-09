@@ -1,10 +1,9 @@
 {% extends "base.html" %} {% block title %}Accounts{% endblock %} {% block header %}Accounts{% endblock %} {% block content %}
 
-<div id="login_form">
+<div id="signup_form">
     <div class='col-sm-6 col-sm-offset-3'>
         <form method="POST" action="/login/" enctype="multipart/form-data">{% csrf_token %} {{ form }}
             <input type="submit" class="btn btn-default" name="signup" value="Sign-Up" />
-            <input type="submit" class="btn btn-primary" name="login" value="Login" />
         </form>
     </div>
 </div>

@@ -7,6 +7,7 @@ urlpatterns = [ # <- any urls specific to this app should go here. helps prevent
     url(r'^$', views.base_view, name="main"),
     url(r'^home/', views.base_view, name='home'),
     url(r'^login', views.signup_view, name='login'),
+    url(r'^signup/', views.signup_view, name='signup'),
     url(r'^invalid/', views.invalid_view, name='invalid'),
     url(r'^index/', views.index_view, name='index'),
 ]

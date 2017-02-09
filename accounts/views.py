@@ -7,7 +7,7 @@ from .models import Accounts
 from . import views
 
 
-def signup_view(request):
+def login_view(request):
     """ login """
     form = UserLoginForm()
     if request.method == "POST":
@@ -51,6 +51,10 @@ def signup_view(request):
                 form = UserLoginForm()
                 return render(request, 'index.html', {}) # Need to setup redirect to home page also
     return render(request, "forms.html", {"form": form})
+
+def signup_view(request):
+    """ Sign-Up View"""
+    return render(request, "signup.html")
 
 def base_view(request):
     """ Home Page View """
