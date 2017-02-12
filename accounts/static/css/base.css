@@ -16,6 +16,7 @@ body {
     padding: 8px;
     overflow: hidden;
     background-color: #333;
+    color: white;
 }
 
 li {
@@ -59,12 +60,30 @@ li {
     position: fixed;
     align-items: center;
     justify-content: center;
-    border: 1px solid green
 }
 
-#signup_form {}
+#login_form .button {
+    background-color: green;
+}
+
+#signup_form {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
 
 #index {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#dashboard {
     color: #fff;
     height: 100%;
     width: 100%;

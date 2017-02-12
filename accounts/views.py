@@ -50,7 +50,7 @@ def login_view(request):
 
                 form = UserLoginForm()
                 return render(request, 'index.html', {}) # Need to setup redirect to home page also
-    return render(request, "forms.html", {"form": form})
+    return render(request, "login.html", {"form": form})
 
 def signup_view(request):
     """ Sign-Up View"""
@@ -80,3 +80,7 @@ def invalid_view(request):
 def index_view(request):
     """ Invalid Login View """
     return render(request, "index.html",)
+
+def dashboard_view(request):
+    """ Store/Dashboard View """
+    return render(request, "dashboard.html",)

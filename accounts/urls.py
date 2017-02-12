@@ -10,4 +10,5 @@ urlpatterns = [ # <- any urls specific to this app should go here. helps prevent
     url(r'^signup/', views.signup_view, name='signup'),
     url(r'^invalid/', views.invalid_view, name='invalid'),
     url(r'^index/', views.index_view, name='index'),
+    url(r'^store/', views.dashboard_view, name='store'),
 ]

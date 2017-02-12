@@ -3,8 +3,7 @@
 <div id="login_form">
     <div class='col-sm-6 col-sm-offset-3'>
         <form method="POST" action="/login/" enctype="multipart/form-data">{% csrf_token %} {{ form }}
-            <input type="submit" class="btn btn-default" name="signup" value="Sign-Up" />
-            <input type="submit" class="btn btn-primary" name="login" value="Login" />
+            <input type="submit" class="button btn-important" name="login" value="Login" />
         </form>
     </div>
 </div>
