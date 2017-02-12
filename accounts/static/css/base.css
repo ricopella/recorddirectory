@@ -19,13 +19,17 @@ body {
     color: white;
 }
 
-li {
+.navbar li {
     display: inline;
     padding: 8px;
 }
 
 .navbar {
     margin: 20;
+}
+
+.navbar a {
+    color: white;
 }
 
 #heading {
@@ -88,4 +92,5 @@ li {
     height: 100%;
     width: 100%;
     text-align: center;
+    padding: 100px
 }
