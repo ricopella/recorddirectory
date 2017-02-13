@@ -3,20 +3,37 @@ html {
 }
 
 body {
-    padding-left: 15px;
-    height: 100%;
-    font-family: 'Lato', sans-serif;
+    font-family: 'AvenirLTStd-Medium', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.header-home {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/vinyl.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/vinyl.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+
+.navigation-row {
+    max-width: 98%;
+    margin: 0 auto;
 }
 
 #navigation {
-    padding: 0;
-    list-style-type: none;
-    margin: 0;
-    display: block;
-    padding: 8px;
-    overflow: hidden;
-    background-color: #333;
-    color: white;
+    float: right;
+    list-style: none;
+    margin-top: 35px;
+    margin-left: 20px;
+    margin-right: 10px;
+    font-size: 18px;
 }
 
 .navbar li {
@@ -24,15 +41,17 @@ body {
     padding: 8px;
 }
 
-.navbar {
-    margin: 20;
-}
-
 .navbar a {
     color: white;
 }
 
-#heading {
+#nav_logo h2 {
+    color: white;
+    font-size: 30px;
+}
+
+
+/*#heading {
     background: transparent;
     min-height: 100%;
     position: relative;
@@ -41,14 +60,25 @@ body {
     height: 100%;
     position: absolute;
     z-index: -1;
-    top: 0px;
-    left: 0px;
+    top: 50%;
+    left: 50%;
     background: url('../img/vinyl.jpg') center center fixed no-repeat;
     background-size: inherit;
+}*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
 }
 
 .intro-text {
-    color: #fff;
+    color: black;
+    font-size: 30px;
     height: 100%;
     width: 100%;
     text-align: center;
@@ -93,4 +123,8 @@ body {
     width: 100%;
     text-align: center;
     padding: 100px
+}
+
+footer {
+    text-align: center;
 }
