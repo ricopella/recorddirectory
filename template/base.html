@@ -7,13 +7,14 @@
     <title>{% block head_title %} Record Directory {% endblock head_title %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
     <link rel="stylesheet" href="{%static 'css/bootstrap.css' %}" />
+    <script src="{% static 'js/myScript.js' %}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
     <header class="header-home">
         <!-- navbar -->
-        <nav class="navbar navbar-right sticky-home">
+        <nav class="topnav navbar navbar-right sticky-home" id="topNav">
             <div class="navigation-row">
                 <div class="col-md-4" id="nav_logo">
                     <h2>Record<span> Directory</span></h2>
@@ -24,6 +25,9 @@
                     <li><a href="/signup">Sign-Up</a></li>
                     <li><a href="/store">Store</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:25px;" onclick="myFunction()">☰</a>
+                    </li>
                 </ul>
             </div>
         </nav>

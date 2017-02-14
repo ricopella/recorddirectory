@@ -24,7 +24,9 @@ body {
 
 .navigation-row {
     max-width: 98%;
-    margin: 0 auto;
+    margin-top: 35px;
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
 #navigation {
@@ -34,15 +36,56 @@ body {
     margin-left: 20px;
     margin-right: 10px;
     font-size: 18px;
+    overflow: hidden;
 }
 
-.navbar li {
+.nav li {
     display: inline;
     padding: 8px;
+    float: left;
 }
 
-.navbar a {
+.nav li a {
     color: white;
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.nav li.icon {
+    display: none;
+}
+
+@media screen and (max-width:1002px) {
+    ul.nav li {
+        display: none;
+    }
+    ul.nav li.icon {
+        float: right;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width:1002px) {
+    ul.nav.responsive {
+        position: relative;
+    }
+    ul.nav.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    ul.nav.responsive li {
+        float: none;
+        display: inline;
+    }
+    ul.nav.responsive li a {
+        display: block;
+        text-align: left;
+    }
 }
 
 #nav_logo h2 {
