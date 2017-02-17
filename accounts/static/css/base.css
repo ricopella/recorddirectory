@@ -32,11 +32,21 @@ body {
 #navigation {
     float: right;
     list-style: none;
-    margin-top: 35px;
+    margin-top: 45px;
     margin-left: 20px;
     margin-right: 10px;
     font-size: 18px;
+    overflow: visible;
+}
+
+#nav_logo {
+    float: left;
+    margin-top: 35px;
+    margin-left: 20px;
+    margin-right: 10px;
     overflow: hidden;
+    color: white;
+    font-size: 30px
 }
 
 .nav li {
@@ -64,7 +74,6 @@ body {
         display: none;
     }
     ul.nav li.icon {
-        float: right;
         display: inline-block;
     }
 }
