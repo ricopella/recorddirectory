@@ -2,8 +2,9 @@
 
 <div id="signup_form">
     <div class='col-sm-6 col-sm-offset-3'>
-        <form method="POST" action="/login/" enctype="multipart/form-data">{% csrf_token %} {{ form }}
-            <input type="submit" class="btn btn-default" name="signup" value="Sign-Up" />
+        <form method="POST" action="/login/" enctype="multipart/form-data" style="border-collapse: seperate; border-spacing: 10px 50px;">
+            <table cellpadding="10">{% csrf_token %} {{ form.as_table }}</table>
+            <input type="submit" class="btn btn-default " name="signup" value="Sign-Up" style="color:black; border-spacing: 10px 50px" />
         </form>
     </div>
 </div>

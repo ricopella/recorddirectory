@@ -13,7 +13,10 @@
 
 <body>
     <header class="header-home">
-        {% block nav_bar %} {% endblock nav_bar %} {% block intro %} {% endblock intro %} {% block login %} {% endblock login %} {% block signup %} {% endblock signup %}
+        {% block nav_bar %} {% endblock nav_bar %}
+        <div class="containter">
+            {% block intro %} {% endblock intro %} {% block login %} {% endblock login %} {% block signup %} {% endblock signup %}
+        </div>
     </header>
     {% block content %} {% endblock content %}
 </body>

@@ -46,7 +46,8 @@ body {
     margin-right: 10px;
     overflow: hidden;
     color: white;
-    font-size: 30px
+    font-size: 30px;
+    display: block;
 }
 
 .nav li {
@@ -73,10 +74,22 @@ body {
     ul.nav li {
         display: none;
     }
+    #nav_logo {
+        display: none;
+    }
     ul.nav li.icon {
         display: inline-block;
     }
+    .container {
+        width: 75%;
+        height: 100%;
+        font-size: 25px;
+        padding: 150px;
+    }
 }
+
+
+/* For browsers smaller than 1002px, fixes overlap */
 
 @media screen and (max-width:1002px) {
     ul.nav.responsive {
@@ -94,6 +107,20 @@ body {
     ul.nav.responsive li a {
         display: block;
         text-align: left;
+    }
+}
+
+
+/* mobile responsive sizing */
+
+@media screen and (max-width:414px) {
+    .container {
+        width: 75%;
+        height: 100%;
+        padding: 150px;
+    }
+    .intro-text {
+        font-size: 15px;
     }
 }
 
@@ -115,6 +142,7 @@ div {
     text-align: center;
     align-items: center;
     justify-content: center;
+    display: block;
 }
 
 #login_form {
@@ -127,8 +155,8 @@ div {
     justify-content: center;
 }
 
-#login_form .button {
-    background-color: green;
+#login_form .btn {
+    color: black;
 }
 
 #signup_form {
