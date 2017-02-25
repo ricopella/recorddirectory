@@ -14,17 +14,8 @@ def login_view(request):
         is_user = True
         form = UserLoginForm(request.POST)
 
-        # need to validate the form before doing anyting else
         if form.is_valid():
-            # grab the username from the form to test if 
-            # user already exists
             username = form.cleaned_data['username']
-
-            # if not form: <- this will always be false. We get the form no matter what
-            #     messages.error(request, "Invalid login credentials")
-            # else:
-            #     return render(request, "base.html", {}) <- best practice to have base just before style/sturcture
-                                                            # you might want to add a seperate index.html that extends base
 
             try: # <- we need to try to get the user expecting it might fail if they don't exist
                 user = Accounts.objects.get(username=username)
@@ -61,12 +52,21 @@ def signup_view(request):
             user = Accounts()
             user.username = form.cleaned_data["username"]
             user.password = form.cleaned_data["password"]
+            user.first_name = form.cleaned_data["first_name"]
+            user.last_name = form.cleaned_data["last_name"]
+            user.street_address1 = form.cleaned_data["street_address1"]
+            user.street_address2 = form.cleaned_data["street_address2"]
+            user.city = form.cleaned_data["city"]
+            user.state = form.cleaned_data["state"]
+            user.country = form.cleaned_data["country"]
+            user.phone = form.cleaned_data["phone"]
+            user.email = form.cleaned_data["email"]
             user.save()
             messages.success(request, 'Username & Password Created!')
             print(form.cleaned_data)
         else:
             form = UserLoginForm()
-    return render(request, 'signup.html', {'form': form}) # Need to setup redirect to home page also
+    return render(request, 'signup.html', {'form': form}) # Re-Direct 
 
 
 def base_view(request):
