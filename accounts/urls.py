@@ -2,8 +2,7 @@ from django.conf.urls import url
 from . import views
 
 app_name = 'accounts'
-urlpatterns = [ # <- any urls specific to this app should go here. helps prevent duplicate urls
-    #url(r'^', views.signup_view, name='Login'),
+urlpatterns = [ 
     url(r'^$', views.index_view, name="main"),
     url(r'^home/', views.index_view, name='home'),
     url(r'^login', views.login_view, name='login'),

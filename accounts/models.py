@@ -13,7 +13,7 @@ class Accounts(models.Model):
     city = models.CharField(max_length=120)
     state = models.CharField(max_length=3)
     country = models.CharField(max_length=120)
-    phone = models.IntegerField(blank=True)
+    phone = models.CharField(max_length=30, blank=True)
     email = models.EmailField(max_length=100, blank=True)
 
     def __str__(self):

@@ -27,6 +27,7 @@ def login_view(request):
                 user.password = form.cleaned_data["password"]
                 user.save()
                 messages.success(request, 'Username & Password Created!')
+                print("It's sending to login form")
                 print(form.cleaned_data)
             elif 'login' in request.POST:
                 if is_user == True:
@@ -48,7 +49,7 @@ def signup_view(request):
     form = UserSignupForm()
     if request.method == "POST":
         form = UserLoginForm(request.POST)
-        if form.is_valid():
+        if 'signup' in request.POST and form.is_valid():
             user = Accounts()
             user.username = form.cleaned_data["username"]
             user.password = form.cleaned_data["password"]
@@ -63,6 +64,7 @@ def signup_view(request):
             user.email = form.cleaned_data["email"]
             user.save()
             messages.success(request, 'Username & Password Created!')
+            print("This is saving " + user.city + user.country + user.first_name + user.last_name)
             print(form.cleaned_data)
         else:
             form = UserLoginForm()
