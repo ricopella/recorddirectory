@@ -1,5 +1,8 @@
-{% extends "base.html" %} {% block header %}Accounts{% endblock %}  {% block login %} {% include nav_bar %}
+{% extends "base.html" %}
+{% block title %}Accounts{% endblock %}
+{% block header %}Accounts{% endblock %}
 
+{% block login %} 
 <div id="login_form">
     <div class='col-sm-6 col-sm-offset-3'>
         <form method="POST" action="/login/" enctype="multipart/form-data">{% csrf_token %} {{ form }}
@@ -7,4 +10,4 @@
         </form>
     </div>
 </div>
-{% endblock login %}
+{% endblock %}

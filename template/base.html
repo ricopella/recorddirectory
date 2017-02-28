@@ -13,14 +13,37 @@
 
 <body>
     <header class="header-home">
-        {% block nav_bar %} {% endblock nav_bar %}
+        <!-- navbar -->
+        <nav class="topnav navbar navbar-right sticky-home" id="topNav">
+            <div class="navigation-row">
+                <div id="nav_logo">
+                    <h2>Record<span> Directory</span></h2>
+                </div>
+                <ul class="nav navbar-nav" id="navigation">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign-Up</a></li>
+                <li><a href="/store">Store</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="icon">
+                    <a href="javascript:void(0);" style="font-size:25px;" onclick="myFunction()">☰</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- end navbar-->
+        <!-- bg image -->
+        <div class="jumbotron text-center" id="heading">
+        </div>
+        <!-- end bg -->
         <div class="containter">
             {% block intro %} {% endblock intro %}
             {% block login %} {% endblock login %}
             {% block signup %} {% endblock signup %}
+            {% block content %} {% endblock content %}
         </div>
     </header>
-    {% block content %} {% endblock content %}
+    
 </body>
 
 <footer>

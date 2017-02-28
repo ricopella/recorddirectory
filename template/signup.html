@@ -1,11 +1,31 @@
-{% extends "nav_bar.html" %} {% block title %}Accounts{% endblock %} {% block header %}Accounts{% endblock %} {% block signup %}
+{% extends "base.html" %} 
+{% block title %}Accounts{% endblock %} 
+{% block header %}Accounts{% endblock %} 
 
+
+{% block signup %}
 <div id="signup_form">
-    <div class='col-sm-6 col-sm-offset-3'>
+    <div class="col-sm-6">
         <form style="border-collapse: seperate; border-spacing: 10px 50px; color: gray;">
-            <div class="col-md-12" cellpadding="10"> {% csrf_token %} {{ form.as_ul }}</div>
+            <div style= "list-style: none; padding: 20px" cellpadding="10"> {% csrf_token %} 
+                <ul id="sign_up_ul" style="list-style-type: none; text-align: right; width:50%; float: none" class="col-md-12" >
+                    <li id="signup_username"> Username: {{ form.username }}</li>
+                    <li id="signup_password"> Password: {{ form.password }}</li>
+                    <li id="signup_first_name"> First Name: {{ form.first_name }}</li>
+                    <li id="signup_last_name"> Last Name: {{ form.last_name }}</li>
+                    <li id="signup_street_address1"> Street Address: {{ form.street_address1 }}</li>
+                    <li id="signup_street_address2"> Street Address 2: {{ form.street_address2 }}</li>
+                    <li id="signup_city"> City: {{ form.city }}</li>
+                    <li id="signup_state"> State: {{ form.state }}</li>
+                    <li id="signup_country"> Country: {{ form.country }}</li>
+                    <li id="signup_phone"> Phone Number: {{ form.phone }}</li>
+                    <li id="signup_email"> E-Mail Address: {{ form.email }}</li>
+                </ul>
+            </div>
+            <div class="col-md-12" style="width:50%; display: block">
             <input type="submit" class="btn btn-default " name="signup" value="Sign-Up" style="color:black; border-spacing: 10px 50px" />
+            </div>
         </form>
     </div>
 </div>
-{% endblock signup %}
+{% endblock %}

@@ -50,6 +50,10 @@ body {
     display: block;
 }
 
+#nav_log:link {
+        text-decoration: none;
+}
+
 .nav li {
     display: inline;
     padding: 8px;
