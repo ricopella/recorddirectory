@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import UserLoginForm, UserSignupForm
-from .models import Accounts
+from .models import Accounts, Catalog, Artist, Label, Genre, Status
 from . import views
 
 
@@ -48,10 +48,9 @@ def signup_view(request):
     """ Sign-Up View"""
     form = UserSignupForm()
     if request.method == "POST":
-        form = UserLoginForm(request.POST)
+        form = UserSignupForm(request.POST)
         if form.is_valid():
             user = Accounts()
-            print (user)
             user.username = form.cleaned_data["username"]
             user.password = form.cleaned_data["password"]
             user.first_name = form.cleaned_data["first_name"]
@@ -65,11 +64,11 @@ def signup_view(request):
             user.email = form.cleaned_data["email"]
             user.save()
             messages.success(request, 'Username & Password Created!')
-            print("This is saving " + user.city + user.country + user.first_name + user.last_name)
             print(form.cleaned_data)
         else:
             form = UserLoginForm()
-    return render(request, 'signup.html', {'form': form}) # Re-Direct 
+            return render(request, 'dashboard.html', {} )
+    return render(request, 'signup.html', {'form': form})
 
 
 def base_view(request):
@@ -86,4 +85,9 @@ def index_view(request):
 
 def dashboard_view(request):
     """ Store/Dashboard View """
-    return render(request, "dashboard.html",)
+    products = Catalog()
+    if request.method =="GET":
+        products = Catalog(request.GET)
+        print (products)
+    
+    return render(request, "dashboard.html", products)
