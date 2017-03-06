@@ -85,9 +85,23 @@ def index_view(request):
 
 def dashboard_view(request):
     """ Store/Dashboard View """
-    products = Catalog()
     if request.method =="GET":
-        products = Catalog(request.GET)
+        products = Catalog.objects.all()
         print (products)
+
+        html_data = {}
+        for product in products:
+            product_dict = {}
+            product_dict["artist"] = product.artist
+            product_dict["title"] = product.title
+            product_dict["price"] = product.price
+            product_dict["image"] = product.image
+        context = {
+            'title': product.title,
+            'price': product.price,
+            'artist': product.artist,
+            'image': product.image,
+        }
+        print(product_dict)
     
-    return render(request, "dashboard.html", products)
+    return render(request, "dashboard.html", context)

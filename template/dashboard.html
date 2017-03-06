@@ -2,11 +2,15 @@
 {% block title %}Accounts{% endblock %}
 {% block header %}Accounts{% endblock %}
 
-{% block content %}
+{% block store %}
 <div id="dashboard">
     <div class="col-md-12">
-        <div class="containter">
-            <h3> Store coming soon! </h3>
+        <div class="container">
+            <h3> Title: {{ title }} </h3>
+            <h3> By: {{ artist }} </h3>
+            <img src="{{ image }}" class="img-responsive">
+            <h3> Price: ${{ price }} </h3>
+            </div>
         </div>
     </div>
 </div>
