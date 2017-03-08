@@ -48,23 +48,28 @@ def signup_view(request):
     """ Sign-Up View"""
     form = UserSignupForm()
     if request.method == "POST":
+        is_user = True
         form = UserSignupForm(request.POST)
         if form.is_valid():
-            user = Accounts()
-            user.username = form.cleaned_data["username"]
-            user.password = form.cleaned_data["password"]
-            user.first_name = form.cleaned_data["first_name"]
-            user.last_name = form.cleaned_data["last_name"]
-            user.street_address1 = form.cleaned_data["street_address1"]
-            user.street_address2 = form.cleaned_data["street_address2"]
-            user.city = form.cleaned_data["city"]
-            user.state = form.cleaned_data["state"]
-            user.country = form.cleaned_data["country"]
-            user.phone = form.cleaned_data["phone"]
-            user.email = form.cleaned_data["email"]
-            user.save()
-            messages.success(request, 'Username & Password Created!')
-            print(form.cleaned_data)
+            if 'signup' in request.POST:
+                
+                user = Accounts()
+                user.username = form.cleaned_data["username"]
+                user.password = form.cleaned_data["password"]
+                user.first_name = form.cleaned_data["first_name"]
+                user.last_name = form.cleaned_data["last_name"]
+                user.street_address1 = form.cleaned_data["street_address1"]
+                user.street_address2 = form.cleaned_data["street_address2"]
+                user.city = form.cleaned_data["city"]
+                user.state = form.cleaned_data["state"]
+                user.country = form.cleaned_data["country"]
+                user.phone = form.cleaned_data["phone"]
+                user.email = form.cleaned_data["email"]
+                user.save()
+                messages.success(request, 'Username & Password Created!')
+                print("This is sending to sign-up form")
+                print(form.cleaned_data)
+                return render(request, 'dashboard.html')
         else:
             form = UserLoginForm()
             return render(request, 'dashboard.html', {} )
@@ -102,6 +107,6 @@ def dashboard_view(request):
             'artist': product.artist,
             'image': product.image,
         }
-        print(product_dict)
+        print(product_dict) # Test
     
     return render(request, "dashboard.html", context)

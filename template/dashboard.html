@@ -5,13 +5,14 @@
 {% block store %}
 <div id="dashboard">
     <div class="col-md-12">
+        {% for obj in objects %}
         <div class="container">
-            <h3> Title: {{ title }} </h3>
-            <h3> By: {{ artist }} </h3>
-            <img src="{{ image }}" class="img-responsive">
-            <h3> Price: ${{ price }} </h3>
-            </div>
+            <h3> Title: {{ obj.title }} </h3>
+            <h3> By: {{ obj.artist }} </h3>
+            <img src="{{ obj.image }}" class="img-responsive" />
+            <h3> Price: ${{ obj.price }} </h3>
         </div>
+            {% endfor %}
     </div>
 </div>
 {% endblock %}
