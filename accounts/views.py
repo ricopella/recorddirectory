@@ -67,7 +67,7 @@ def signup_view(request):
                 user.email = form.cleaned_data["email"]
                 user.save()
                 messages.success(request, 'Username & Password Created!')
-                print("This is sending to sign-up form")
+                print("This is sending to sign-up form") # Test
                 print(form.cleaned_data)
                 return render(request, 'dashboard.html')
         else:
@@ -89,7 +89,7 @@ def index_view(request):
     return render(request, "index.html",)
 
 def dashboard_view(request):
-    """ Store/Dashboard View """
+    """ Store/Dashboard View to display all products in database """
     if request.method =="GET":
         products = Catalog.objects.all()
         print (products)
