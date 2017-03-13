@@ -103,5 +103,4 @@ def dashboard_view(request):
             product_dict["price"] = product.price
             product_dict["image"] = product.image
             data.append(product_dict)
-        # print(product_dict) # Test
     return render(request, "dashboard.html", {'data': data})
