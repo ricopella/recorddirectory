@@ -2,17 +2,26 @@
 {% block title %}Accounts{% endblock %}
 {% block header %}Accounts{% endblock %}
 
-{% block store %}
+{% block store_splash %}
+    <div id="storeSplash">
+      <h2> The Freshest Vinyl is below! </h2>
+    </div>
+
+ {% endblock %}
+
+
+{% block content %}
 <div id="dashboard">
-    <div class="col-md-12">
-        {% for obj in objects %}
-        <div class="container">
+        {% for obj in data %}
+            <div class="col-md-4">
+        <div class="container well">
             <h3> Title: {{ obj.title }} </h3>
             <h3> By: {{ obj.artist }} </h3>
-            <img src="{{ obj.image }}" class="img-responsive" />
+            <img src="{{ obj.image }}" class="img-responsive" id="vinyl_pic" alt="{{ obj.title }} Cover"/>
             <h3> Price: ${{ obj.price }} </h3>
         </div>
-            {% endfor %}
-    </div>
+            </div>
+        {% endfor %}
+
 </div>
 {% endblock %}

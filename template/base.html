@@ -36,15 +36,18 @@
         <div class="jumbotron text-center" id="heading">
         </div>
         <!-- end bg -->
-        <div class="containter">
+         <div class="containter">
             {% block intro %} {% endblock intro %}
             {% block login %} {% endblock login %}
             {% block signup %} {% endblock signup %}
-            {% block store %} {% endblock store %}
-            {% block content %} {% endblock content %}
-        </div>
-    </header>
-    
+            {% block store_splash %} {% endblock store_splash %}
+        </div> 
+    </header> 
+
+    <div id="store">
+        {% block content %} {% endblock content %}
+    </div>
+
 </body>
 
 <footer>

@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import UserLoginForm, UserSignupForm
-from .models import Accounts, Catalog, Artist, Label, Genre, Status
+from .models import Accounts, Catalog
 from . import views
 
 
@@ -95,18 +95,13 @@ def dashboard_view(request):
         print (products)
 
         html_data = {}
+        data = []
         for product in products:
             product_dict = {}
             product_dict["artist"] = product.artist
             product_dict["title"] = product.title
             product_dict["price"] = product.price
             product_dict["image"] = product.image
-        context = {
-            'title': product.title,
-            'price': product.price,
-            'artist': product.artist,
-            'image': product.image,
-        }
-        print(product_dict) # Test
-    
-    return render(request, "dashboard.html", context)
+            data.append(product_dict)
+        # print(product_dict) # Test
+    return render(request, "dashboard.html", {'data': data})
