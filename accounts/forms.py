@@ -18,3 +18,10 @@ class UserSignupForm(forms.Form):
     country = forms.CharField(max_length=120, required=False)
     phone = forms.CharField(max_length=30, required=False)
     email = forms.EmailField(max_length=100, required=False)
+
+class ContactForm(forms.Form):
+    """ Contact Us Form """
+    name = forms.CharField(max_length=300)
+    number = forms.CharField(max_length=30, required=False)
+    email = forms.EmailField(max_length=100, required=False)
+    description = forms.CharField(required=True)

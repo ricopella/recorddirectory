@@ -2,8 +2,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
-from .forms import UserLoginForm, UserSignupForm
-from .models import Accounts, Catalog
+from .forms import UserLoginForm, UserSignupForm, ContactForm
+from .models import Accounts, Catalog, Contact
 from . import views
 
 
@@ -17,23 +17,19 @@ def login_view(request):
         if form.is_valid():
             username = form.cleaned_data['username']
 
-            try: # <- we need to try to get the user expecting it might fail if they don't exist
+            try:
                 user = Accounts.objects.get(username=username)
-            except ObjectDoesNotExist: # <- here is where we catch or 'except' the error so the app doesn't crash
-                is_user = False        # found the specific error here http://stackoverflow.com/questions/11109468/how-do-i-import-the-django-doesnotexist-exception
+            except ObjectDoesNotExist: 
+                is_user = False       
             if 'signup' in request.POST and is_user == False:
                 user = Accounts()
                 user.username = form.cleaned_data["username"]
                 user.password = form.cleaned_data["password"]
-                user.save()
-                messages.success(request, 'Username & Password Created!')
-                print("It's sending to login form")
                 print(form.cleaned_data)
             elif 'login' in request.POST:
                 if is_user == True:
                     if user.password == form.cleaned_data['password']:
-                        print ('success!') # test
-                        return render(request, 'index.html', {}) # <- same thing as about index.html
+                        return render(request, 'dashboard.html', {}) 
                     else:
                         messages.success(request, "invalid username & password")
                 elif is_user == False:
@@ -41,7 +37,7 @@ def login_view(request):
             else:
 
                 form = UserLoginForm()
-                return render(request, 'index.html', {}) # Need to setup redirect to home page also
+                return render(request, 'dashboard.html', {})
     return render(request, "login.html", {"form": form})
 
 def signup_view(request):
@@ -66,8 +62,6 @@ def signup_view(request):
                 user.phone = form.cleaned_data["phone"]
                 user.email = form.cleaned_data["email"]
                 user.save()
-                messages.success(request, 'Username & Password Created!')
-                print("This is sending to sign-up form") # Test
                 print(form.cleaned_data)
                 return render(request, 'dashboard.html')
         else:
@@ -75,6 +69,26 @@ def signup_view(request):
             return render(request, 'dashboard.html', {} )
     return render(request, 'signup.html', {'form': form})
 
+
+def contact_view(request):
+    """ Contact Page View """
+    form = ContactForm()
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            if 'submit' in request.POST:
+                contact_ticket = Contact()
+                contact_ticket.name = form.cleaned_data["name"]
+                contact_ticket.phone_number = form.cleaned_data["phone_number"]
+                contact_ticket.email = form.cleaned_data["email"]
+                contact_ticket.description = form.cleaned_data["description"]
+                contact_ticket.save()
+                print(form.cleaned_data)
+                return render(request, "dashboard.html")
+        else:
+            form = ContactForm()
+            return render(request, 'dashboard.html', {})
+    return render(request, "contact.html", {'form': form})
 
 def base_view(request):
     """ Home Page View """
@@ -87,6 +101,7 @@ def invalid_view(request):
 def index_view(request):
     """ Invalid Login View """
     return render(request, "index.html",)
+
 
 def dashboard_view(request):
     """ Store/Dashboard View to display all products in database """
@@ -103,5 +118,4 @@ def dashboard_view(request):
             product_dict["price"] = product.price
             product_dict["image"] = product.image
             data.append(product_dict)
-        # print(product_dict) # Test
     return render(request, "dashboard.html", {'data': data})

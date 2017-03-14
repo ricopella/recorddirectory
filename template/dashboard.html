@@ -6,7 +6,6 @@
     <div id="storeSplash">
       <h2> The Freshest Vinyl is below! </h2>
     </div>
-
  {% endblock %}
 
 
@@ -14,14 +13,12 @@
 <div id="dashboard">
         {% for obj in data %}
             <div class="col-md-4">
-        <div class="container well">
-            <h3> Title: {{ obj.title }} </h3>
-            <h3> By: {{ obj.artist }} </h3>
-            <img src="{{ obj.image }}" class="img-responsive" id="vinyl_pic" alt="{{ obj.title }} Cover"/>
-            <h3> Price: ${{ obj.price }} </h3>
-        </div>
+                <div class="container well">
+                    <img src="{{ obj.image }}" class="img-responsive" id="vinyl_pic" alt="{{ obj.title }} Cover"/>
+                    <h4> {{ obj.artist }} - {{ obj.title }}</h4>
+                    <h5> ${{ obj.price }} </h5>
+                </div>
             </div>
         {% endfor %}
-
 </div>
 {% endblock %}

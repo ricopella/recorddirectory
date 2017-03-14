@@ -92,7 +92,6 @@ body {
     }
 }
 
-
 /* For browsers smaller than 1002px, fixes overlap */
 
 @media screen and (max-width:1002px) {
@@ -113,7 +112,6 @@ body {
         text-align: left;
     }
 }
-
 
 /* mobile responsive sizing */
 
@@ -191,13 +189,23 @@ div {
     justify-content: center;
 }
 
+#contact {
+    color: white;
+    font-size: 30px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
+
 #dashboard {
     color: black;
     padding: 100px;
     align-items: center;
     display: flex;
 }
-
 
 footer {
     text-align: center;
