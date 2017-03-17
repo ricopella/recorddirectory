@@ -79,7 +79,7 @@ def contact_view(request):
             if 'submit' in request.POST:
                 contact_ticket = Contact()
                 contact_ticket.name = form.cleaned_data["name"]
-                contact_ticket.phone_number = form.cleaned_data["phone_number"]
+                contact_ticket.number = form.cleaned_data["number"]
                 contact_ticket.email = form.cleaned_data["email"]
                 contact_ticket.description = form.cleaned_data["description"]
                 contact_ticket.save()
@@ -119,3 +119,6 @@ def dashboard_view(request):
             product_dict["image"] = product.image
             data.append(product_dict)
     return render(request, "dashboard.html", {'data': data})
+
+
+# def chunk_list(data, chunk_size):
