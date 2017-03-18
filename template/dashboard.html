@@ -12,11 +12,14 @@
 {% block content %}
 <div id="dashboard">
         {% for obj in data %}
+            <div class="row>"
+            {% for item in obj %}
             <div class="col-md-4">
                 <div class="container well">
-                    <img src="{{ obj.image }}" class="img-responsive" id="vinyl_pic" alt="{{ obj.title }} Cover"/>
-                    <h4> {{ obj.artist }} - {{ obj.title }}</h4>
-                    <h5> ${{ obj.price }} </h5>
+                    <img src="{{ item.image }}" class="img-responsive" id="vinyl_pic" alt="{{ obj.title }} Cover"/>
+                    <h4> {{ item.artist }} - {{ item.title }}</h4>
+                    <h5> ${{ item.price }} </h5>
+                </div>
                 </div>
             </div>
         {% endfor %}

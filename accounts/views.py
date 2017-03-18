@@ -118,7 +118,16 @@ def dashboard_view(request):
             product_dict["price"] = product.price
             product_dict["image"] = product.image
             data.append(product_dict)
+        chunked_data = chunk_list(data, 3) # [[1,2,3], [4,5,6]]
     return render(request, "dashboard.html", {'data': data})
 
 
-# def chunk_list(data, chunk_size):
+def chunk_list(data, chunkSize):
+    chunked_arr = []
+    for i in data:
+        i = 0
+        if i < length(data):
+            i += chunkSize
+            chunked_arr = [i:chunkSize]
+    return chunked_arr
+            
