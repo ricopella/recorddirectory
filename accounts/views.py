@@ -124,10 +124,9 @@ def dashboard_view(request):
 
 def chunk_list(data, chunkSize):
     chunked_arr = []
-    for i in data:
-        i = 0
-        if i < length(data):
-            i += chunkSize
-            chunked_arr = [i:chunkSize]
+    i = 0
+    while (i < len(data)):
+        i += chunkSize
+        chunked_arr = [i:chunkSize]
     return chunked_arr
             
