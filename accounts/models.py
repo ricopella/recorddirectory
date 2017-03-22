@@ -35,4 +35,4 @@ class Contact(models.Model):
     name = models.CharField(max_length=300)
     number = models.CharField(max_length=30, blank=True)
     email = models.EmailField(max_length=100, blank=True)
-    despcrition = models.TextField()
+    despcrition = models.TextField(max_length=2000)

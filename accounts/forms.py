@@ -24,4 +24,4 @@ class ContactForm(forms.Form):
     name = forms.CharField(max_length=300)
     number = forms.CharField(max_length=30, required=False)
     email = forms.EmailField(max_length=100, required=False)
-    description = forms.TextField(required=True)
+    description = forms.CharField(widget=forms.Textarea)

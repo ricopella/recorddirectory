@@ -123,10 +123,13 @@ def dashboard_view(request):
 
 
 def chunk_list(data, chunkSize):
+    """ loops through the data list from 'dashboard_view'
+        to incriment through the products for readability
+        on dashboard template """
     chunked_arr = []
     i = 0
     while (i < len(data)):
+        chunked_arr = chunked_arr.append(data[i:chunkSize])
         i += chunkSize
-        chunked_arr = [i:chunkSize]
     return chunked_arr
             
