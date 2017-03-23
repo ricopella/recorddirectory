@@ -129,7 +129,7 @@ def chunk_list(data, chunkSize):
     chunked_arr = []
     i = 0
     while (i < len(data)):
-        chunked_arr = chunked_arr.append(data[i:chunkSize])
+        chunked_arr.append(data[i:chunkSize])
         i += chunkSize
     return chunked_arr
             
