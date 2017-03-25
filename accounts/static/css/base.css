@@ -202,9 +202,33 @@ div {
 
 #dashboard {
     color: black;
-    padding: 100px;
+    margin-top: 20px;
     align-items: center;
     display: flex;
+    /*width: 960px;*/
+}
+
+#vinyl_pic {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.col-md-4 {
+    border: 1px solid red;
+}
+
+.test {
+    border: 1px solid blue;
+    max-height: 260px;
+    overflow: hidden;
+}
+
+.test h4, h5 {
+    text-align: center;
+    font-size: 15px;
 }
 
 footer {
