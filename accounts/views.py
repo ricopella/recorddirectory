@@ -118,9 +118,7 @@ def dashboard_view(request):
             product_dict["price"] = product.price
             product_dict["image"] = product.image
             data.append(product_dict)
-<<<<<<< HEAD
-    return render(request, "dashboard.html", {'data': data})
-=======
+
         chunked_data = chunk_list(data, 3) # [[1,2,3], [4,5,6]]
     return render(request, "dashboard.html", {'data': chunked_data})
 
@@ -137,5 +135,3 @@ def chunk_list(data, chunkSize):
     print("chunked_arr:", chunked_arr) # Test for subarrays working properly
     return chunked_arr
 
-            
->>>>>>> layout2
