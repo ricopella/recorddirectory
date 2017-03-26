@@ -178,17 +178,6 @@ div {
     text-align: center;
 }
 
-#storeSplash {
-    color: white;
-    font-size: 30px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-}
-
 #contact {
     color: white;
     font-size: 30px;
@@ -200,35 +189,37 @@ div {
     justify-content: center;
 }
 
+#storeSplash {
+    color: white;
+    font-size: 30px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #dashboard {
     color: black;
     margin-top: 20px;
     align-items: center;
-    display: flex;
-    /*width: 960px;*/
-}
-
-#vinyl_pic {
-    width: 200px;
-    height: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
-
-.col-md-4 {
-    border: 1px solid red;
-}
-
-.test {
-    border: 1px solid blue;
-    max-height: 260px;
     overflow: hidden;
 }
 
-.test h4, h5 {
+#vinyl_pic {
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.col-md-4 {
+    padding-top: 20px;
+    border: 1px solid red;
+}
+
+.captions h4, h5 {
     text-align: center;
     font-size: 15px;
+    overflow: hidden;
 }
 
 footer {

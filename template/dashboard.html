@@ -9,19 +9,19 @@
  {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        {% for obj in data %}
-        {% for item in obj %}
-        <div class="col-md-4">
-            <div class="test">
-                <img src="{{ item.image }}" class="img-responsive" id="vinyl_pic" alt="{{ item.title }} Cover"/>
-                <h4> {{ item.artist }} - {{ item.title }}</h4>
-                <h5> ${{ item.price }} </h5>
+    <div class="container-fluid">
+        <div class="row">
+            {% for obj in data %}
+            {% for item in obj %}
+            <div class="col-md-4">
+                <div class="captions">
+                    <img src="{{ item.image }}" class="img-responsive" id="vinyl_pic" alt="{{ item.title }} Cover"/>
+                    <h4> {{ item.artist }} - {{ item.title }}</h4>
+                    <h5> ${{ item.price }} </h5>
+                </div>
             </div>
+            {% endfor %}
+            {% endfor %}
         </div>
-        {% endfor %}
-        {% endfor %}
     </div>
-</div>
 {% endblock %}
