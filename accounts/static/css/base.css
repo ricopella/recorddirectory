@@ -92,7 +92,6 @@ body {
     }
 }
 
-
 /* For browsers smaller than 1002px, fixes overlap */
 
 @media screen and (max-width:1002px) {
@@ -113,7 +112,6 @@ body {
         text-align: left;
     }
 }
-
 
 /* mobile responsive sizing */
 
@@ -180,7 +178,7 @@ div {
     text-align: center;
 }
 
-#storeSplash {
+#contact {
     color: white;
     font-size: 30px;
     height: 100%;
@@ -191,13 +189,38 @@ div {
     justify-content: center;
 }
 
-#dashboard {
-    color: black;
-    padding: 100px;
-    align-items: center;
+#storeSplash {
+    color: white;
+    font-size: 30px;
+    height: 100%;
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+#dashboard {
+    color: black;
+    margin-top: 20px;
+    align-items: center;
+    overflow: hidden;
+}
+
+#vinyl_pic {
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.col-md-4 {
+    padding-top: 20px;
+    /*border: 1px solid red;*/
+}
+
+.captions h4, h5 {
+    text-align: center;
+    font-size: 15px;
+    overflow: hidden;
+}
 
 footer {
     text-align: center;

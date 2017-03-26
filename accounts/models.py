@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Accounts(models.Model):
     """ User Accounts database """
     username = models.CharField(max_length=120)
@@ -32,3 +30,9 @@ class Catalog(models.Model):
     inventory = models.IntegerField()
     date_created = models.DateTimeField(auto_now_add=True)
 
+class Contact(models.Model):
+    """ Contact Us database """
+    name = models.CharField(max_length=300)
+    number = models.CharField(max_length=30, blank=True)
+    email = models.EmailField(max_length=100, blank=True)
+    despcrition = models.TextField(max_length=2000)

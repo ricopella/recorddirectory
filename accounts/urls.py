@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^invalid/', views.invalid_view, name='invalid'),
     url(r'^index/', views.index_view, name='index'),
     url(r'^store/', views.dashboard_view, name='store'),
+    url(r'^contact/', views.contact_view, name='contact'),
 ]
