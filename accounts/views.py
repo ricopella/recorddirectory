@@ -132,6 +132,6 @@ def chunk_list(data, chunkSize):
     while (i < len(data)):
         chunked_arr.append(data[i:i + chunkSize])
         i += chunkSize
-    print("chunked_arr:", chunked_arr) # Test for subarrays working properly
+   # print("chunked_arr:", chunked_arr) # Test for subarrays working properly
     return chunked_arr
 

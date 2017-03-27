@@ -1,14 +1,12 @@
-{% extends "base.html" %} 
-{% block title %}Accounts{% endblock %} 
-{% block header %}Accounts{% endblock %} 
+{% extends "base.html" %} {% block title %}Accounts{% endblock %} {% block header %}Accounts{% endblock %} 
 
 
 {% block signup %}
 <div id="signup_form">
-    <div class="col-sm-6">
+    <div class="col-md-12">
         <form method="POST" style="border-collapse: seperate; border-spacing: 10px 50px; color: gray;">
-            <div style= "list-style: none; padding: 20px" cellpadding="10"> {% csrf_token %} 
-                <ul id="sign_up_ul" style="list-style-type: none; text-align: right; width:50%; float: none" class="col-md-12" >
+            <div style="list-style: none" cellpadding="10"> {% csrf_token %} 
+                <ul id="sign_up_ul" style="list-style-type: none; text-align: right; width:50%; float: none;" >
                     <li id="signup_username"> Username: {{ form.username }}</li>
                     <li id="signup_password"> Password: {{ form.password }}</li>
                     <li id="signup_first_name"> First Name: {{ form.first_name }}</li>

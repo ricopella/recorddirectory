@@ -149,8 +149,8 @@ div {
 
 #login_form {
     color: #fff;
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 50%;
     display: flex;
     position: fixed;
     align-items: center;
@@ -158,6 +158,10 @@ div {
 }
 
 #login_form .btn {
+    color: black;
+}
+
+input {
     color: black;
 }
 
@@ -171,6 +175,10 @@ div {
     justify-content: center;
 }
 
+#sign_up_ul li {
+    padding: 5px;
+}
+
 #index {
     color: #fff;
     height: 100%;
@@ -178,7 +186,7 @@ div {
     text-align: center;
 }
 
-#contact {
+#contact_form {
     color: white;
     font-size: 30px;
     height: 100%;
