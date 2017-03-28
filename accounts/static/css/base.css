@@ -184,13 +184,17 @@ input {
 
 #contact_form {
     color: white;
-    font-size: 30px;
-    height: 100%;
-    width: 100%;
-    display: flex;
+    display: inline-block;
     position: fixed;
     align-items: center;
     justify-content: center;
+    height: 30%;
+    width: 30%;
+    margin: auto;
+}
+
+#contact_form li {
+    text-align: left;
 }
 
 #storeSplash {

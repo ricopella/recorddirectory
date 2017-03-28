@@ -2,18 +2,18 @@
 
 {% block contact %}
 <div id="contact_form">
-    <div class="col-md-12">
-        <form method="POST" style="border-collapse: seperate; border-spacing: 10px 50px; color: gray;">
+    <div class="col-md-12" style="background-color: lightgrey">
+        <form method="POST" style="border-collapse: seperate; border-spacing: 10px 50px; color: black;">
             <div style= "list-style: none; padding: 20px" cellpadding="10"> {% csrf_token %} 
                 <ul id="sign_up_ul" style="list-style-type: none; text-align: right; width:50%; float: none" class="col-md-12" >
-                    <li id="contact_name"> Name: {{ form.name }}</li>
-                    <li id="contact_phone"> Phone Number: {{ form.phone_number }}</li>
+                    <li id="contact_name" style="color: black;"> Name: {{ form.name }}</li>
+                    <li id="contact_phone"> Phone Number: {{ form.number }}</li>
                     <li id="contact_email"> E-Mail Address: {{ form.email }}</li>
                     <li id="contact_description">Description: {{ form.description }}</li>
                 </ul>
             </div>
             <div class="col-md-12" style="width:50%; display: block">
-            <input type="submit" class="btn btn-default " name="submit" value="Submit" style="color:black; border-spacing: 10px 50px" />
+            <input type="submit" class="btn btn-default" name="submit" value="Submit" style="color:black; border-spacing: 10px 50px" />
             </div>
         </form>
     </div>
